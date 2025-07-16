@@ -1,0 +1,216 @@
+[
+  {
+    "ContainingType": "RedeSocial.Api.Controller.AmizadeController",
+    "Method": "ObterAmizadesDoUsuario",
+    "RelativePath": "api/Amizade",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.AmizadeController",
+    "Method": "AceitarAmizade",
+    "RelativePath": "api/Amizade/aceitar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "RedeSocial.Aplicacao.Dto.AmizadeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "RedeSocial.Aplicacao.Dto.AmizadeDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.AmizadeController",
+    "Method": "RemoverAmizade",
+    "RelativePath": "api/Amizade/Remover/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.AmizadePendenteController",
+    "Method": "EnviarSolicitacao",
+    "RelativePath": "api/AmizadePendente",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "RedeSocial.Aplicacao.Dto.AmizadePendenteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.AmizadePendenteController",
+    "Method": "ListarPedidosEnviados",
+    "RelativePath": "api/AmizadePendente/enviados",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[RedeSocial.Aplicacao.Dto.AmizadePendenteDTO, RedeSocial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.AmizadePendenteController",
+    "Method": "RejeitarPedido",
+    "RelativePath": "api/AmizadePendente/Enviados/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.AmizadePendenteController",
+    "Method": "ListarPedidosRecebidos",
+    "RelativePath": "api/AmizadePendente/Recebidos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[RedeSocial.Aplicacao.Dto.AmizadePendenteDTO, RedeSocial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.UsuarioController",
+    "Method": "ObterUsuarioAutenticado",
+    "RelativePath": "api/Usuario/Autenticado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "RedeSocial.Aplicacao.Dto.UsuarioDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.UsuarioController",
+    "Method": "Autenticar",
+    "RelativePath": "api/Usuario/autenticar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "RedeSocial.Aplicacao.Dto.LoginRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.UsuarioController",
+    "Method": "ListarUsuariosPorNome",
+    "RelativePath": "api/Usuario/nome",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nome",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[RedeSocial.Aplicacao.Dto.UsuarioDTO, RedeSocial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.UsuarioController",
+    "Method": "Registrar",
+    "RelativePath": "api/Usuario/Registrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "RedeSocial.Domain.Entities.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
