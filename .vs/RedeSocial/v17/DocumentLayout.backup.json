@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\celso\\source\\repos\\RedeSocial\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\api\\controller\\amizadecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:api\\controller\\amizadecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\aplicacao\\service\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:aplicacao\\service\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\aplicacao\\service\\amizadeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:aplicacao\\service\\amizadeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\api\\controller\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:api\\controller\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\aplicacao\\service\\amizadependenteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:aplicacao\\service\\amizadependenteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\infraestrutura\\repositorios\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:infraestrutura\\repositorios\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\aplicacao\\dto\\postresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:aplicacao\\dto\\postresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\domain\\entities\\comentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:domain\\entities\\comentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\domain\\entities\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:domain\\entities\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +38,91 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AmizadeController.cs",
-              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Api\\Controller\\AmizadeController.cs",
-              "RelativeDocumentMoniker": "Api\\Controller\\AmizadeController.cs",
-              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Api\\Controller\\AmizadeController.cs",
-              "RelativeToolTip": "Api\\Controller\\AmizadeController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAACEAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T15:16:58.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AmizadeService.cs",
-              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Service\\AmizadeService.cs",
-              "RelativeDocumentMoniker": "Aplicacao\\Service\\AmizadeService.cs",
-              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Service\\AmizadeService.cs",
-              "RelativeToolTip": "Aplicacao\\Service\\AmizadeService.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T15:06:20.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-18T16:31:45.273Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AmizadePendenteService.cs",
-              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Service\\AmizadePendenteService.cs",
-              "RelativeDocumentMoniker": "Aplicacao\\Service\\AmizadePendenteService.cs",
-              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Service\\AmizadePendenteService.cs",
-              "RelativeToolTip": "Aplicacao\\Service\\AmizadePendenteService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAAEIAAAAJAAAAAAAAAA==",
+              "Title": "PostRepository.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Infraestrutura\\Repositorios\\PostRepository.cs",
+              "RelativeDocumentMoniker": "Infraestrutura\\Repositorios\\PostRepository.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Infraestrutura\\Repositorios\\PostRepository.cs",
+              "RelativeToolTip": "Infraestrutura\\Repositorios\\PostRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwCIAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T15:03:04.437Z",
+              "WhenOpened": "2025-07-18T16:27:28.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Comentario.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Domain\\Entities\\Comentario.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Comentario.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Domain\\Entities\\Comentario.cs",
+              "RelativeToolTip": "Domain\\Entities\\Comentario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T16:24:07.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PostController.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Api\\Controller\\PostController.cs",
+              "RelativeDocumentMoniker": "Api\\Controller\\PostController.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Api\\Controller\\PostController.cs",
+              "RelativeToolTip": "Api\\Controller\\PostController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T15:51:44.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Post.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Domain\\Entities\\Post.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Post.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Domain\\Entities\\Post.cs",
+              "RelativeToolTip": "Domain\\Entities\\Post.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T13:33:09.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PostResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Dto\\PostResponseDTO.cs",
+              "RelativeDocumentMoniker": "Aplicacao\\Dto\\PostResponseDTO.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Dto\\PostResponseDTO.cs",
+              "RelativeToolTip": "Aplicacao\\Dto\\PostResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T12:19:20.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PostService.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Service\\PostService.cs",
+              "RelativeDocumentMoniker": "Aplicacao\\Service\\PostService.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Service\\PostService.cs",
+              "RelativeToolTip": "Aplicacao\\Service\\PostService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAuwCQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T12:09:19.636Z",
               "EditorCaption": ""
             }
           ]

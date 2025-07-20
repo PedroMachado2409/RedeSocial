@@ -118,3 +118,4 @@ C:\Users\celso\source\repos\RedeSocial\obj\Debug\net8.0\refint\RedeSocial.dll
 C:\Users\celso\source\repos\RedeSocial\obj\Debug\net8.0\RedeSocial.pdb
 C:\Users\celso\source\repos\RedeSocial\obj\Debug\net8.0\RedeSocial.genruntimeconfig.cache
 C:\Users\celso\source\repos\RedeSocial\obj\Debug\net8.0\ref\RedeSocial.dll
+C:\Users\celso\source\repos\RedeSocial\obj\Debug\net8.0\RedeSocial.sourcelink.json

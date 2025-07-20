@@ -23,12 +23,20 @@ namespace RedeSocial.Api.Controller
             return Ok(amizades);
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ObterAmizadePorId(int id)
+        {
+            var amigo = await _service.ObterAmizadePorId(id);
+            return Ok(amigo);
+        }
+
         [HttpPost("aceitar")]
         public async Task<ActionResult<AmizadeDTO>> AceitarAmizade([FromBody] AmizadeDTO dto)
         {
             var amizade = await _service.AceitarAmizade(dto);
             return Ok(amizade);
         }
+
 
         [HttpDelete("Remover/{id}")]
         public async Task RemoverAmizade(int id)

@@ -48,10 +48,5 @@ namespace RedeSocial.Infraestrutura.Repositorios
              _context.AmizadePendentes.Remove(pendente);
              await _context.SaveChangesAsync();
         }
-
-        public async Task DesanexarPedido(AmizadePendente pedido)
-        {
-            _context.Entry(pedido).State = EntityState.Detached;
-        }
     }
 }

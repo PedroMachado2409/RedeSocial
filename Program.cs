@@ -67,9 +67,15 @@ builder.Services.AddScoped<AmizadePendenteService>();
 builder.Services.AddScoped<AmizadeRepository, AmizadeRepository>();
 builder.Services.AddScoped<AmizadeService>();
 
+builder.Services.AddScoped<PostRepository>();
+builder.Services.AddScoped<ComentarioRepository>();
+builder.Services.AddScoped<PostService>();
+
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(UsuarioProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(AmizadeProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(PostProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(PostResponseProfile).Assembly);
 
 
 var app = builder.Build();

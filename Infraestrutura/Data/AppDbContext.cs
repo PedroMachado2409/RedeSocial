@@ -8,6 +8,9 @@ namespace RedeSocial.Infraestrutura.Data
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<AmizadePendente> AmizadePendentes { get; set; }
         public DbSet<Amizade> Amizades { get; set; }
+        public DbSet<Comentario> Comentarios { get; set; }
+        public DbSet <Post> Posts { get; set; }
+       
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 

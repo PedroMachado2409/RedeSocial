@@ -40,6 +40,10 @@ namespace RedeSocial.Aplicacao.Service
             return _mapper.Map<AmizadeDTO>(amizade);
         }
 
+        public async Task<Amizade?> ObterAmizadePorId(int id)
+        {
+            return await _repository.ObterAmizadePorId(id);
+        }
 
 
         public async Task<List<AmizadeDTO>> ListarAmizadesDoUsuario()
