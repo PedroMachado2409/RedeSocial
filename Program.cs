@@ -2,13 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
+using RedeSocial.Api.Middlware;
 using RedeSocial.Aplicacao.Mapping;
 using RedeSocial.Aplicacao.Service;
 using RedeSocial.Infraestrutura.Data;
 using RedeSocial.Infraestrutura.Repositorios;
 using System.Text;
 using System.Text.Json.Serialization;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -57,6 +57,17 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+// Configuração CORS aberta para dev
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 // Registre seus serviços personalizados
 builder.Services.AddScoped<UsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<AuthService>();
@@ -77,7 +88,6 @@ builder.Services.AddAutoMapper(typeof(AmizadeProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(PostProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(PostResponseProfile).Assembly);
 
-
 var app = builder.Build();
 
 // Configure o pipeline HTTP.
@@ -88,6 +98,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Aplica a política CORS "AllowAll"
+app.UseCors("AllowAll");
+
+// Registro do Middleware de tratamento global de erros
+app.UseMiddleware<Middleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();

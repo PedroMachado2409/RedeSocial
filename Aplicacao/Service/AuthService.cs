@@ -41,6 +41,7 @@ namespace RedeSocial.Aplicacao.Service
 
         public async Task<LoginResponseDTO> Autenticar(LoginRequestDTO dto)
         {
+            
             var usuario = await _repository.ObterUsuarioPorEmail(dto.Email);
             if (usuario == null || !PasswordHelper.VerificarSenha(dto.Senha, usuario.Senha))
             {

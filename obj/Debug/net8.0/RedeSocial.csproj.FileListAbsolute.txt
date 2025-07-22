@@ -119,3 +119,9 @@ C:\Users\celso\source\repos\RedeSocial\obj\Debug\net8.0\RedeSocial.pdb
 C:\Users\celso\source\repos\RedeSocial\obj\Debug\net8.0\RedeSocial.genruntimeconfig.cache
 C:\Users\celso\source\repos\RedeSocial\obj\Debug\net8.0\ref\RedeSocial.dll
 C:\Users\celso\source\repos\RedeSocial\obj\Debug\net8.0\RedeSocial.sourcelink.json
+C:\Users\celso\source\repos\RedeSocial\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\celso\source\repos\RedeSocial\bin\Debug\net8.0\Moq.dll
+C:\Users\celso\source\repos\RedeSocial\bin\Debug\net8.0\xunit.abstractions.dll
+C:\Users\celso\source\repos\RedeSocial\bin\Debug\net8.0\xunit.assert.dll
+C:\Users\celso\source\repos\RedeSocial\bin\Debug\net8.0\xunit.core.dll
+C:\Users\celso\source\repos\RedeSocial\bin\Debug\net8.0\xunit.execution.dotnet.dll

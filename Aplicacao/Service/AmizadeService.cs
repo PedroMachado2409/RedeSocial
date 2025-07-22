@@ -31,7 +31,6 @@ namespace RedeSocial.Aplicacao.Service
             if (pedido.DestinatarioId != usuario.Id)
                 throw new Exception(Messages.ApenasDestinatario);
 
-           await  _pendenteRepository.DesanexarPedido(pedido);
 
             var novaAmizade = new Amizade().Criar(pedido.SolicitanteId, pedido.DestinatarioId, pedido.Id);
 
