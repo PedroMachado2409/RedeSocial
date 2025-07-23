@@ -44,5 +44,13 @@ namespace RedeSocial.Infraestrutura.Repositorios
             _context.Amizades.Remove(amizade);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<List<int>> ObterIdsDosAmigos(int usuarioId)
+        {
+            return await _context.Amizades
+                .Where(a => a.UsuarioId == usuarioId || a.AmigoId == usuarioId)
+                .Select(a => a.UsuarioId == usuarioId ? a.AmigoId : a.UsuarioId)
+                .ToListAsync();
+        }
     }
 }

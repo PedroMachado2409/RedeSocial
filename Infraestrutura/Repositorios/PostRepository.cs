@@ -35,5 +35,18 @@ namespace RedeSocial.Infraestrutura.Repositorios
             return post;
         }
 
+        public async Task<List<Post>> ListarPostsDosAmigos(List<int> amigosIds)
+        {
+            return await _context.Posts
+                .Include(p => p.Comentarios)
+                    .ThenInclude(c => c.Usuario)
+                .Include(p => p.Usuario)
+                .Where(p => amigosIds.Contains(p.UsuarioId))
+                .OrderBy(p => p.Id)
+                .ToListAsync();
+        }
+
+      
+
     }
 }

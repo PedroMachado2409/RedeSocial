@@ -36,6 +36,13 @@ namespace RedeSocial.Api.Controller
             return Ok(comentario);
         }
 
+        [HttpGet("PostsAmigos")]
+        public async Task<ActionResult> ObterPostsDosAmigos()
+        {
+            var posts = await _service.ListarPostApenasDosAmigos();
+            return Ok(posts);
+        }
+
 
     }
 }

@@ -194,6 +194,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "RedeSocial.Api.Controller.PostController",
+    "Method": "ObterPostsDosAmigos",
+    "RelativePath": "api/Post/PostsAmigos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "RedeSocial.Api.Controller.UsuarioController",
     "Method": "ObterUsuarioAutenticado",
     "RelativePath": "api/Usuario/Autenticado",

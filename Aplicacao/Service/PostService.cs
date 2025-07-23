@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using RedeSocial.Aplicacao.Dto;
 using RedeSocial.Domain.Entities;
 using RedeSocial.Infraestrutura.Repositorios;
@@ -9,13 +10,15 @@ namespace RedeSocial.Aplicacao.Service
     {
         private readonly PostRepository _repository;
         private readonly ComentarioRepository _comentarioRepository;
+        private readonly AmizadeRepository _amizadeRepository;
         private readonly AuthService _AuthService;
         private readonly IMapper _mapper;
         
-        public PostService (PostRepository postRepository, ComentarioRepository comentarioRepository, AuthService authService, IMapper mapper)
+        public PostService (PostRepository postRepository, ComentarioRepository comentarioRepository, AuthService authService, IMapper mapper, AmizadeRepository amizadeRepository)
         {
             _repository = postRepository;
             _comentarioRepository = comentarioRepository;   
+            _amizadeRepository = amizadeRepository;
             _AuthService = authService;
             _mapper = mapper;
         }
@@ -51,5 +54,15 @@ namespace RedeSocial.Aplicacao.Service
 
         }
 
+        public async Task<List<PostResponseDTO>> ListarPostApenasDosAmigos()
+        {
+            var usuario = await _AuthService.ObterUsuarioAutenticado();
+
+            var idsDosAmigos = await _amizadeRepository.ObterIdsDosAmigos(usuario.Id);
+
+            var posts = await _repository.ListarPostsDosAmigos(idsDosAmigos);
+
+            return _mapper.Map<List<PostResponseDTO>>(posts);
+        }
     }
 }
