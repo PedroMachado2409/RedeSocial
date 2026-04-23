@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using RedeSocial.Aplicacao.Dto;
+using RedeSocial.Domain.Abstractions;
 using RedeSocial.Domain.Entities;
 using RedeSocial.Infraestrutura.Repositorios;
 
@@ -8,13 +9,13 @@ namespace RedeSocial.Aplicacao.Service
 {
     public class PostService
     {
-        private readonly PostRepository _repository;
-        private readonly ComentarioRepository _comentarioRepository;
-        private readonly AmizadeRepository _amizadeRepository;
+        private readonly IPostRepository _repository;
+        private readonly IComentarioRepository _comentarioRepository;
+        private readonly IAmizadeRepository _amizadeRepository;
         private readonly AuthService _AuthService;
         private readonly IMapper _mapper;
         
-        public PostService (PostRepository postRepository, ComentarioRepository comentarioRepository, AuthService authService, IMapper mapper, AmizadeRepository amizadeRepository)
+        public PostService (IPostRepository postRepository, ComentarioRepository comentarioRepository, AuthService authService, IMapper mapper, IAmizadeRepository amizadeRepository)
         {
             _repository = postRepository;
             _comentarioRepository = comentarioRepository;   
@@ -22,8 +23,6 @@ namespace RedeSocial.Aplicacao.Service
             _AuthService = authService;
             _mapper = mapper;
         }
-
-    
 
         public async Task<PostRequestDTO> CadastrarPost(PostRequestDTO dto)
         {

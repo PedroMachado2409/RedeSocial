@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using RedeSocial.Aplicacao.Dto;
+using RedeSocial.Domain.Abstractions;
 using RedeSocial.Domain.Entities;
 using RedeSocial.Exceptions;
 using RedeSocial.Infraestrutura.Repositorios;
@@ -7,12 +8,12 @@ namespace RedeSocial.Aplicacao.Service
 {
     public class AmizadeService
     {
-        private readonly AmizadeRepository _repository;
-        private readonly AmizadePendenteRepository _pendenteRepository;
+        private readonly IAmizadeRepository _repository;
+        private readonly IAmizadePendenteRepository _pendenteRepository;
         private readonly AuthService _authService;
         private readonly IMapper _mapper;
 
-        public AmizadeService(AmizadeRepository repository, IMapper mapper, AmizadePendenteRepository pendenteRepository, AuthService authService)
+        public AmizadeService(IAmizadeRepository repository, IMapper mapper, IAmizadePendenteRepository pendenteRepository, AuthService authService)
         {
             _repository = repository;
             _authService = authService;
@@ -26,10 +27,10 @@ namespace RedeSocial.Aplicacao.Service
             var pedido = await _pendenteRepository.ObterPedidoDeAmizadePorId(dto.PedidoId);
 
             if (pedido == null)
-                throw new Exception(Messages.PedidoNotFound);
+                throw new BadRequestException(Messages.PedidoNotFound);
 
             if (pedido.DestinatarioId != usuario.Id)
-                throw new Exception(Messages.ApenasDestinatario);
+                throw new BadRequestException(Messages.ApenasDestinatario);
 
 
             var novaAmizade = new Amizade().Criar(pedido.SolicitanteId, pedido.DestinatarioId, pedido.Id);

@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using RedeSocial.Api.Middlware;
 using RedeSocial.Aplicacao.Mapping;
 using RedeSocial.Aplicacao.Service;
+using RedeSocial.Domain.Abstractions;
 using RedeSocial.Infraestrutura.Data;
 using RedeSocial.Infraestrutura.Repositorios;
 using System.Text;
@@ -12,12 +13,12 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
-        // 👇 Converte enums para strings no JSON
+        //  Converte enums para strings no JSON
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
@@ -69,17 +70,17 @@ builder.Services.AddCors(options =>
 });
 
 // Registre seus serviços personalizados
-builder.Services.AddScoped<UsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<AuthService>();
 
-builder.Services.AddScoped<AmizadePendenteRepository, AmizadePendenteRepository>();
+builder.Services.AddScoped<IAmizadePendenteRepository, AmizadePendenteRepository>();
 builder.Services.AddScoped<AmizadePendenteService>();
 
-builder.Services.AddScoped<AmizadeRepository, AmizadeRepository>();
+builder.Services.AddScoped<IAmizadeRepository, AmizadeRepository>();
 builder.Services.AddScoped<AmizadeService>();
 
-builder.Services.AddScoped<PostRepository>();
-builder.Services.AddScoped<ComentarioRepository>();
+builder.Services.AddScoped<IPostRepository>();
+builder.Services.AddScoped<IComentarioRepository>();
 builder.Services.AddScoped<PostService>();
 
 // AutoMapper

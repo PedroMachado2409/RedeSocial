@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.IdentityModel.Tokens;
 using RedeSocial.Aplicacao.Dto;
+using RedeSocial.Domain.Abstractions;
 using RedeSocial.Domain.Entities;
 using RedeSocial.Exceptions;
 using RedeSocial.Infraestrutura.Repositorios;
@@ -14,12 +15,12 @@ namespace RedeSocial.Aplicacao.Service
     public class AuthService
     {
         private readonly IConfiguration _configuration;
-        private readonly UsuarioRepository _repository;
+        private readonly IUsuarioRepository _repository;
         private readonly IMapper _mapper;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
 
-        public AuthService(IConfiguration configuration, UsuarioRepository repository, IMapper mapper, IHttpContextAccessor httpContextAccessor)
+        public AuthService(IConfiguration configuration, IUsuarioRepository repository, IMapper mapper, IHttpContextAccessor httpContextAccessor)
         {
             _configuration = configuration;
             _repository = repository;
@@ -32,7 +33,7 @@ namespace RedeSocial.Aplicacao.Service
             var usuarioExistente = await _repository.ObterUsuarioPorEmail(usuario.Email);
             if(usuarioExistente != null)
             {
-                throw new Exception(Messages.EmailCadastrado);
+                throw new BadRequestException(Messages.EmailCadastrado);
             }
 
             usuario.Senha = PasswordHelper.CriptografarSenha(usuario.Senha);
@@ -45,7 +46,7 @@ namespace RedeSocial.Aplicacao.Service
             var usuario = await _repository.ObterUsuarioPorEmail(dto.Email);
             if (usuario == null || !PasswordHelper.VerificarSenha(dto.Senha, usuario.Senha))
             {
-                throw new Exception(Messages.CredenciaisInvalidas);
+                throw new BadRequestException(Messages.CredenciaisInvalidas);
             }
 
             var token = GerarToken(usuario);
@@ -69,7 +70,7 @@ namespace RedeSocial.Aplicacao.Service
             var usuario = await _repository.ObterUsuarioPorNome(nome);
             if(usuario == null)
             {
-                throw new Exception(Messages.UsuarioNotFound);
+                throw new BadRequestException(Messages.UsuarioNotFound);
             }
 
             return _mapper.Map<List<UsuarioDTO>>(usuario);

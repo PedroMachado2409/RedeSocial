@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\celso\\source\\repos\\RedeSocial\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\api\\controller\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:api\\controller\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\aplicacao\\dto\\postresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:aplicacao\\dto\\postresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\aplicacao\\dto\\postrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:aplicacao\\dto\\postrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\redesocial\\aplicacao\\service\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:aplicacao\\service\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PostRequestDTO.cs",
-              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Dto\\PostRequestDTO.cs",
-              "RelativeDocumentMoniker": "Aplicacao\\Dto\\PostRequestDTO.cs",
-              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Dto\\PostRequestDTO.cs",
-              "RelativeToolTip": "Aplicacao\\Dto\\PostRequestDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:12:47.836Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PostResponseDTO.cs",
-              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Dto\\PostResponseDTO.cs",
-              "RelativeDocumentMoniker": "Aplicacao\\Dto\\PostResponseDTO.cs",
-              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Dto\\PostResponseDTO.cs",
-              "RelativeToolTip": "Aplicacao\\Dto\\PostResponseDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:10:37.917Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PostController.cs",
-              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Api\\Controller\\PostController.cs",
-              "RelativeDocumentMoniker": "Api\\Controller\\PostController.cs",
-              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Api\\Controller\\PostController.cs",
-              "RelativeToolTip": "Api\\Controller\\PostController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAADwvyYAAAAgAAAAAAAAAA==",
+              "Title": "PostService.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Service\\PostService.cs",
+              "RelativeDocumentMoniker": "Aplicacao\\Service\\PostService.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\RedeSocial\\Aplicacao\\Service\\PostService.cs",
+              "RelativeToolTip": "Aplicacao\\Service\\PostService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T13:16:08.512Z",
+              "WhenOpened": "2026-04-23T22:42:34.731Z",
               "EditorCaption": ""
             }
           ]

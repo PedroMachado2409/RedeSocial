@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RedeSocial.Domain.Abstractions;
 using RedeSocial.Domain.Entities;
 using RedeSocial.Infraestrutura.Data;
 
 namespace RedeSocial.Infraestrutura.Repositorios
 {
-    public class AmizadeRepository
+    public class AmizadeRepository : IAmizadeRepository
     {
         private readonly AppDbContext _context;
 
