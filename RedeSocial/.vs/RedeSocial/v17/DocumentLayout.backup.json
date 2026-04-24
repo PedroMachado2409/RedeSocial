@@ -1,0 +1,72 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocial\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7045F4B2-FFDC-40D0-AB6B-E8A0BA44647F}|..\\RedeSocialTests\\RedeSocialTests.csproj|c:\\users\\celso\\source\\repos\\social\\redesocialtests\\aplicacao\\service\\authservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7045F4B2-FFDC-40D0-AB6B-E8A0BA44647F}|..\\RedeSocialTests\\RedeSocialTests.csproj|c:\\users\\celso\\source\\repos\\social\\redesocialtests\\aplicacao\\service\\postservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7045F4B2-FFDC-40D0-AB6B-E8A0BA44647F}|..\\RedeSocialTests\\RedeSocialTests.csproj|c:\\users\\celso\\source\\repos\\social\\redesocialtests\\aplicacao\\service\\amizadeservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PostServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\PostServiceTests.cs",
+              "RelativeDocumentMoniker": "..\\RedeSocialTests\\Aplicacao\\Service\\PostServiceTests.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\PostServiceTests.cs",
+              "RelativeToolTip": "..\\RedeSocialTests\\Aplicacao\\Service\\PostServiceTests.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAYwBoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T00:54:03.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\AuthServiceTests.cs",
+              "RelativeDocumentMoniker": "..\\RedeSocialTests\\Aplicacao\\Service\\AuthServiceTests.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\AuthServiceTests.cs",
+              "RelativeToolTip": "..\\RedeSocialTests\\Aplicacao\\Service\\AuthServiceTests.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAIA2wCAAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T00:54:02.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AmizadeServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\AmizadeServiceTests.cs",
+              "RelativeDocumentMoniker": "..\\RedeSocialTests\\Aplicacao\\Service\\AmizadeServiceTests.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\AmizadeServiceTests.cs",
+              "RelativeToolTip": "..\\RedeSocialTests\\Aplicacao\\Service\\AmizadeServiceTests.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T00:53:37.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
