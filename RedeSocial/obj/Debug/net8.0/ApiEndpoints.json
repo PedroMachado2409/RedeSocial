@@ -35,7 +35,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "RedeSocial.Aplicacao.Dto.AmizadeDTO",
+        "Type": "RedeSocial.Aplicacao.Dto.AceitarAmizadeRequestDTO",
         "IsRequired": true
       }
     ],
@@ -83,7 +83,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "RedeSocial.Aplicacao.Dto.AmizadePendenteDTO",
+        "Type": "RedeSocial.Aplicacao.Dto.EnviarAmizadeRequestDTO",
         "IsRequired": true
       }
     ],
@@ -179,6 +179,38 @@
   },
   {
     "ContainingType": "RedeSocial.Api.Controller.PostController",
+    "Method": "CurtirPost",
+    "RelativePath": "api/Post/{postId}/curtir",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.PostController",
+    "Method": "RetirarCurtida",
+    "RelativePath": "api/Post/{postId}/removerCurtida",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.PostController",
     "Method": "RegistrarComentario",
     "RelativePath": "api/Post/comentar",
     "HttpMethod": "POST",
@@ -195,6 +227,16 @@
   },
   {
     "ContainingType": "RedeSocial.Api.Controller.PostController",
+    "Method": "ListarMeusPosts",
+    "RelativePath": "api/Post/meus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.PostController",
     "Method": "ObterPostsDosAmigos",
     "RelativePath": "api/Post/PostsAmigos",
     "HttpMethod": "GET",
@@ -202,6 +244,32 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.PostController",
+    "Method": "ListarPostsDoUsuario",
+    "RelativePath": "api/Post/usuario/{usuarioId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[RedeSocial.Aplicacao.Dto.PostResponseDTO, RedeSocial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "RedeSocial.Api.Controller.UsuarioController",
@@ -267,6 +335,58 @@
   },
   {
     "ContainingType": "RedeSocial.Api.Controller.UsuarioController",
+    "Method": "AtualizarPerfil",
+    "RelativePath": "api/Usuario/perfil",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "RedeSocial.Aplicacao.Dto.AtualizarPerfilRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "RedeSocial.Aplicacao.Dto.PerfilResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.UsuarioController",
+    "Method": "ObterPerfil",
+    "RelativePath": "api/Usuario/perfil/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "RedeSocial.Aplicacao.Dto.PerfilResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.UsuarioController",
     "Method": "Registrar",
     "RelativePath": "api/Usuario/Registrar",
     "HttpMethod": "POST",
@@ -276,6 +396,22 @@
       {
         "Name": "usuario",
         "Type": "RedeSocial.Domain.Entities.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedeSocial.Api.Controller.UsuarioController",
+    "Method": "TrocarSenha",
+    "RelativePath": "api/Usuario/senha",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "RedeSocial.Aplicacao.Dto.TrocarSenhaRequestDTO",
         "IsRequired": true
       }
     ],

@@ -4,10 +4,12 @@ namespace RedeSocial.Domain.Abstractions
 {
     public interface IUsuarioRepository
     {
-        public Task<Usuario> CadastrarUsuario(Usuario usuario);
-        public Task<List<Usuario>> ListarTodosOsUsuarios();
-        public Task<Usuario?> ObterUsuarioPorId(int id);
-        public Task<Usuario?> ObterUsuarioPorEmail(string email);
-        public Task<List<Usuario>>ObterUsuarioPorNome(string nome);
+        Task<Usuario>       CadastrarUsuario(Usuario usuario);
+        Task<List<Usuario>> ListarTodosOsUsuarios();
+        Task<Usuario?>      ObterUsuarioPorId(int id);
+        Task<Usuario?>      ObterUsuarioPorEmail(string email);
+        Task<List<Usuario>> ObterUsuarioPorNome(string nome);
+        Task<Usuario>       AtualizarPerfil(Usuario usuario);
+        Task                TrocarSenha(Usuario usuario);
     }
 }

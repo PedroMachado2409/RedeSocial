@@ -14,25 +14,28 @@ using RedeSocial.Infraestrutura.Seguranca;
 
 public class AuthServiceTests
 {
-    private readonly Mock<IUsuarioRepository> _repositoryMock;
-    private readonly Mock<IMapper> _mapperMock;
-    private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
-    private readonly IConfiguration _configuration;
-
-    private readonly IAuthService _service;
+    private readonly Mock<IUsuarioRepository>    _repositoryMock;
+    private readonly Mock<IPostRepository>       _postRepositoryMock;
+    private readonly Mock<IAmizadeRepository>    _amizadeRepositoryMock;
+    private readonly Mock<IMapper>               _mapperMock;
+    private readonly Mock<IHttpContextAccessor>  _httpContextAccessorMock;
+    private readonly IConfiguration              _configuration;
+    private readonly IAuthService                _service;
 
     public AuthServiceTests()
     {
-        _repositoryMock = new Mock<IUsuarioRepository>();
-        _mapperMock = new Mock<IMapper>();
+        _repositoryMock          = new Mock<IUsuarioRepository>();
+        _postRepositoryMock      = new Mock<IPostRepository>();
+        _amizadeRepositoryMock   = new Mock<IAmizadeRepository>();
+        _mapperMock              = new Mock<IMapper>();
         _httpContextAccessorMock = new Mock<IHttpContextAccessor>();
 
         var inMemorySettings = new Dictionary<string, string>
-            {
-                {"Jwt:Key", "super_secret_key_123456_super_secret_key_123456"},
-                {"Jwt:Issuer", "test_issuer"},
-                {"Jwt:Audience", "test_audience"}
-            };
+        {
+            {"Jwt:Key",      "super_secret_key_123456_super_secret_key_123456"},
+            {"Jwt:Issuer",   "test_issuer"},
+            {"Jwt:Audience", "test_audience"}
+        };
 
         _configuration = new ConfigurationBuilder()
             .AddInMemoryCollection(inMemorySettings!)
@@ -41,6 +44,8 @@ public class AuthServiceTests
         _service = new AuthService(
             _configuration,
             _repositoryMock.Object,
+            _postRepositoryMock.Object,
+            _amizadeRepositoryMock.Object,
             _mapperMock.Object,
             _httpContextAccessorMock.Object
         );
@@ -83,14 +88,10 @@ public class AuthServiceTests
     [Fact]
     public async Task Autenticar_DeveRetornarToken_QuandoCredenciaisValidas()
     {
-        var senha = "123456";
+        var senha   = "123456";
         var usuario = new Usuario("Pedro", "teste@email.com", PasswordHelper.CriptografarSenha(senha));
 
-        var dto = new LoginRequestDTO
-        {
-            Email = usuario.Email,
-            Senha = senha
-        };
+        var dto = new LoginRequestDTO { Email = usuario.Email, Senha = senha };
 
         _repositoryMock.Setup(r => r.ObterUsuarioPorEmail(dto.Email))
             .ReturnsAsync(usuario);
@@ -105,11 +106,7 @@ public class AuthServiceTests
     [Fact]
     public async Task Autenticar_DeveLancarExcecao_QuandoUsuarioNaoExiste()
     {
-        var dto = new LoginRequestDTO
-        {
-            Email = "teste@email.com",
-            Senha = "123456"
-        };
+        var dto = new LoginRequestDTO { Email = "teste@email.com", Senha = "123456" };
 
         _repositoryMock.Setup(r => r.ObterUsuarioPorEmail(dto.Email))
             .ReturnsAsync((Usuario?)null);
@@ -124,11 +121,7 @@ public class AuthServiceTests
     {
         var usuario = new Usuario("Pedro", "teste@email.com", PasswordHelper.CriptografarSenha("senha_correta"));
 
-        var dto = new LoginRequestDTO
-        {
-            Email = usuario.Email,
-            Senha = "senha_errada"
-        };
+        var dto = new LoginRequestDTO { Email = usuario.Email, Senha = "senha_errada" };
 
         _repositoryMock.Setup(r => r.ObterUsuarioPorEmail(dto.Email))
             .ReturnsAsync(usuario);
@@ -143,28 +136,14 @@ public class AuthServiceTests
     [Fact]
     public async Task ObterUsuarioAutenticado_DeveRetornarUsuario_QuandoClaimExiste()
     {
-        var email = "teste@email.com";
+        var email  = "teste@email.com";
+        var claims = new List<Claim> { new Claim(ClaimTypes.NameIdentifier, email) };
+        var httpContext = new DefaultHttpContext { User = new ClaimsPrincipal(new ClaimsIdentity(claims)) };
 
-        var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.NameIdentifier, email)
-        };
-
-        var identity = new ClaimsIdentity(claims);
-        var principal = new ClaimsPrincipal(identity);
-
-        var httpContext = new DefaultHttpContext
-        {
-            User = principal
-        };
-
-        _httpContextAccessorMock.Setup(x => x.HttpContext)
-            .Returns(httpContext);
+        _httpContextAccessorMock.Setup(x => x.HttpContext).Returns(httpContext);
 
         var usuario = new Usuario("Pedro", email, "123456");
-
-        _repositoryMock.Setup(r => r.ObterUsuarioPorEmail(email))
-            .ReturnsAsync(usuario);
+        _repositoryMock.Setup(r => r.ObterUsuarioPorEmail(email)).ReturnsAsync(usuario);
 
         var result = await _service.ObterUsuarioAutenticado();
 
@@ -177,21 +156,11 @@ public class AuthServiceTests
     [Fact]
     public async Task ObterUsuarioPorNome_DeveRetornarListaMapeada()
     {
-        var usuarios = new List<Usuario>
-        {
-            new Usuario("Pedro", "pedro@email.com", "123456")
-        };
+        var usuarios    = new List<Usuario> { new Usuario("Pedro", "pedro@email.com", "123456") };
+        var usuariosDto = new List<UsuarioDTO> { new UsuarioDTO { Nome = "Pedro" } };
 
-        var usuariosDto = new List<UsuarioDTO>
-        {
-            new UsuarioDTO { Nome = "Pedro" }
-        };
-
-        _repositoryMock.Setup(r => r.ObterUsuarioPorNome("Pedro"))
-            .ReturnsAsync(usuarios);
-
-        _mapperMock.Setup(m => m.Map<List<UsuarioDTO>>(usuarios))
-            .Returns(usuariosDto);
+        _repositoryMock.Setup(r => r.ObterUsuarioPorNome("Pedro")).ReturnsAsync(usuarios);
+        _mapperMock.Setup(m => m.Map<List<UsuarioDTO>>(usuarios)).Returns(usuariosDto);
 
         var result = await _service.ObterUsuarioPorNome("Pedro");
 

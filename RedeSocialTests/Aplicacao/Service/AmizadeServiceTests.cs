@@ -10,20 +10,18 @@ using RedeSocial.Exceptions;
 
 public class AmizadeServiceTests
 {
-    private readonly Mock<IAmizadeRepository> _repositoryMock;
+    private readonly Mock<IAmizadeRepository>        _repositoryMock;
     private readonly Mock<IAmizadePendenteRepository> _pendenteRepositoryMock;
-    private readonly Mock<IAuthService> _authServiceMock;
-    private readonly Mock<IMapper> _mapperMock;
-
-    private readonly AmizadeService _service;
+    private readonly Mock<IAuthService>              _authServiceMock;
+    private readonly Mock<IMapper>                   _mapperMock;
+    private readonly AmizadeService                  _service;
 
     public AmizadeServiceTests()
     {
-        _repositoryMock = new Mock<IAmizadeRepository>();
+        _repositoryMock         = new Mock<IAmizadeRepository>();
         _pendenteRepositoryMock = new Mock<IAmizadePendenteRepository>();
-        _mapperMock = new Mock<IMapper>();
-
-        _authServiceMock = new Mock<IAuthService>();
+        _mapperMock             = new Mock<IMapper>();
+        _authServiceMock        = new Mock<IAuthService>();
 
         _service = new AmizadeService(
             _repositoryMock.Object,
@@ -37,26 +35,17 @@ public class AmizadeServiceTests
     public async Task AceitarAmizade_DeveCriarAmizade_QuandoValido()
     {
         var usuario = new Usuario("Pedro", "email@email.com", "123");
-        var pedido = new AmizadePendente().Criar(2, usuario.Id);
+        var pedido  = new AmizadePendente().Criar(2, usuario.Id);
 
-        var dto = new AmizadeDTO
-        {
-            PedidoId = pedido.Id
-        };
-
+        // usa o DTO correto: AceitarAmizadeRequestDTO
+        var dto     = new AceitarAmizadeRequestDTO { PedidoId = pedido.Id };
         var amizade = new Amizade().Criar(pedido.SolicitanteId, pedido.DestinatarioId, pedido.Id);
+        var amizadeDto = new AmizadeDTO { PedidoId = pedido.Id };
 
-        _authServiceMock.Setup(a => a.ObterUsuarioAutenticado())
-            .ReturnsAsync(usuario);
-
-        _pendenteRepositoryMock.Setup(p => p.ObterPedidoDeAmizadePorId(dto.PedidoId))
-            .ReturnsAsync(pedido);
-
-        _repositoryMock.Setup(r => r.FazerAmizade(It.IsAny<Amizade>(), pedido))
-            .ReturnsAsync(amizade);
-
-        _mapperMock.Setup(m => m.Map<AmizadeDTO>(amizade))
-            .Returns(dto);
+        _authServiceMock.Setup(a => a.ObterUsuarioAutenticado()).ReturnsAsync(usuario);
+        _pendenteRepositoryMock.Setup(p => p.ObterPedidoDeAmizadePorId(dto.PedidoId)).ReturnsAsync(pedido);
+        _repositoryMock.Setup(r => r.FazerAmizade(It.IsAny<Amizade>(), pedido)).ReturnsAsync(amizade);
+        _mapperMock.Setup(m => m.Map<AmizadeDTO>(amizade)).Returns(amizadeDto);
 
         var result = await _service.AceitarAmizade(dto);
 
@@ -67,15 +56,9 @@ public class AmizadeServiceTests
     public async Task AceitarAmizade_DeveLancarExcecao_QuandoPedidoNaoExiste()
     {
         var usuario = new Usuario("Pedro", "email@email.com", "123");
+        var dto     = new AceitarAmizadeRequestDTO { PedidoId = 1 };
 
-        var dto = new AmizadeDTO
-        {
-            PedidoId = 1
-        };
-
-        _authServiceMock.Setup(a => a.ObterUsuarioAutenticado())
-            .ReturnsAsync(usuario);
-
+        _authServiceMock.Setup(a => a.ObterUsuarioAutenticado()).ReturnsAsync(usuario);
         _pendenteRepositoryMock.Setup(p => p.ObterPedidoDeAmizadePorId(dto.PedidoId))
             .ReturnsAsync((AmizadePendente?)null);
 
@@ -88,19 +71,11 @@ public class AmizadeServiceTests
     public async Task AceitarAmizade_DeveLancarExcecao_QuandoNaoForDestinatario()
     {
         var usuario = new Usuario("Pedro", "email@email.com", "123");
+        var pedido  = new AmizadePendente().Criar(2, 999); // destinatário diferente
+        var dto     = new AceitarAmizadeRequestDTO { PedidoId = pedido.Id };
 
-        var pedido = new AmizadePendente().Criar(2, 999); // não é o usuário
-
-        var dto = new AmizadeDTO
-        {
-            PedidoId = pedido.Id
-        };
-
-        _authServiceMock.Setup(a => a.ObterUsuarioAutenticado())
-            .ReturnsAsync(usuario);
-
-        _pendenteRepositoryMock.Setup(p => p.ObterPedidoDeAmizadePorId(dto.PedidoId))
-            .ReturnsAsync(pedido);
+        _authServiceMock.Setup(a => a.ObterUsuarioAutenticado()).ReturnsAsync(usuario);
+        _pendenteRepositoryMock.Setup(p => p.ObterPedidoDeAmizadePorId(dto.PedidoId)).ReturnsAsync(pedido);
 
         var act = async () => await _service.AceitarAmizade(dto);
 
@@ -111,9 +86,7 @@ public class AmizadeServiceTests
     public async Task ObterAmizadePorId_DeveRetornarAmizade()
     {
         var amizade = new Amizade().Criar(1, 2, 10);
-
-        _repositoryMock.Setup(r => r.ObterAmizadePorId(1))
-            .ReturnsAsync(amizade);
+        _repositoryMock.Setup(r => r.ObterAmizadePorId(1)).ReturnsAsync(amizade);
 
         var result = await _service.ObterAmizadePorId(1);
 
@@ -123,26 +96,13 @@ public class AmizadeServiceTests
     [Fact]
     public async Task ListarAmizadesDoUsuario_DeveRetornarListaMapeada()
     {
-        var usuario = new Usuario("Pedro", "email@email.com", "123");
+        var usuario  = new Usuario("Pedro", "email@email.com", "123");
+        var amizades = new List<Amizade> { new Amizade().Criar(usuario.Id, 2, 1) };
+        var dto      = new List<AmizadeDTO> { new AmizadeDTO() };
 
-        var amizades = new List<Amizade>
-        {
-            new Amizade().Criar(usuario.Id, 2, 1)
-        };
-
-        var dto = new List<AmizadeDTO>
-        {
-            new AmizadeDTO()
-        };
-
-        _authServiceMock.Setup(a => a.ObterUsuarioAutenticado())
-            .ReturnsAsync(usuario);
-
-        _repositoryMock.Setup(r => r.ListarAmigosDoUsuario(usuario.Id))
-            .ReturnsAsync(amizades);
-
-        _mapperMock.Setup(m => m.Map<List<AmizadeDTO>>(amizades))
-            .Returns(dto);
+        _authServiceMock.Setup(a => a.ObterUsuarioAutenticado()).ReturnsAsync(usuario);
+        _repositoryMock.Setup(r => r.ListarAmigosDoUsuario(usuario.Id)).ReturnsAsync(amizades);
+        _mapperMock.Setup(m => m.Map<List<AmizadeDTO>>(amizades)).Returns(dto);
 
         var result = await _service.ListarAmizadesDoUsuario();
 
@@ -153,9 +113,7 @@ public class AmizadeServiceTests
     public async Task RemoverAmizade_DeveChamarRepositorio()
     {
         var amizade = new Amizade().Criar(1, 2, 10);
-
-        _repositoryMock.Setup(r => r.ObterAmizadePorId(1))
-            .ReturnsAsync(amizade);
+        _repositoryMock.Setup(r => r.ObterAmizadePorId(1)).ReturnsAsync(amizade);
 
         await _service.RemoverAmizade(1);
 

@@ -1,0 +1,6 @@
+.appShell { min-height: 100vh; background: #f0f2f5; }
+
+.pageContent {
+  padding-top: 56px; /* altura da navbar */
+  min-height: calc(100vh - 56px);
+}

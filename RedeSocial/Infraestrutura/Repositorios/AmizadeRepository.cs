@@ -16,8 +16,11 @@ namespace RedeSocial.Infraestrutura.Repositorios
 
         public async Task<List<Amizade>> ListarAmigosDoUsuario(int usuarioId)
         {
-            return await _context.Amizades.Include(a => a.Usuario).Include(a => a.Amigo)
-                .Where(a => a.AmigoId == usuarioId || a.UsuarioId == usuarioId).ToListAsync();
+            return await _context.Amizades
+                .Where(x => x.UsuarioId == usuarioId || x.AmigoId == usuarioId)
+                .Include(x => x.Usuario)
+                .Include(x => x.Amigo)
+                .ToListAsync();
         }
 
         public async Task<bool> JaSaoAmigos(int usuario1Id, int usuario2Id)

@@ -21,7 +21,7 @@ namespace RedeSocial.Aplicacao.Service
             _pendenteRepository = pendenteRepository;
         }
 
-        public async Task<AmizadeDTO> AceitarAmizade(AmizadeDTO dto)
+        public async Task<AmizadeDTO> AceitarAmizade(AceitarAmizadeRequestDTO dto)
         {
             var usuario = await _authService.ObterUsuarioAutenticado();
             var pedido = await _pendenteRepository.ObterPedidoDeAmizadePorId(dto.PedidoId);
@@ -50,7 +50,12 @@ namespace RedeSocial.Aplicacao.Service
         {
             var usuario = await _authService.ObterUsuarioAutenticado();
             var amizades = await _repository.ListarAmigosDoUsuario(usuario.Id);
-            return _mapper.Map<List<AmizadeDTO>>(amizades);
+
+
+            return _mapper.Map<List<AmizadeDTO>>(amizades, opt =>
+            {
+                opt.Items["usuarioId"] = usuario.Id;
+            });
         }
 
         public async Task RemoverAmizade(int id)

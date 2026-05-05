@@ -39,7 +39,7 @@ namespace RedeSocial.Aplicacao.Service
             return _mapper.Map<List<AmizadePendenteDTO>>(pedidos);
         }
 
-        public async Task<AmizadePendenteDTO> EnviarPedidoDeAmizade(AmizadePendenteDTO dto)
+        public async Task<AmizadePendenteDTO> EnviarPedidoDeAmizade(EnviarAmizadeRequestDTO dto)
         {
             var usuarioLogado = await _authService.ObterUsuarioAutenticado();
 
@@ -56,6 +56,7 @@ namespace RedeSocial.Aplicacao.Service
                 throw new BadRequestException(Messages.AmizadeExistente);
 
             var novaSolicitacao = new AmizadePendente().Criar(usuarioLogado.Id, dto.DestinatarioId);
+
             var entidade = await _repository.EnviarSolicitacao(novaSolicitacao);
 
             return _mapper.Map<AmizadePendenteDTO>(entidade);

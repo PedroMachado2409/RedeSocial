@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
-using RedeSocial.Api.Middlware;
+
 using RedeSocial.Aplicacao.Mapping;
 using RedeSocial.Aplicacao.Service;
 using RedeSocial.Aplicacao.Validators;
@@ -13,6 +13,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using RedeSocial.Infraestrutura.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -83,12 +84,14 @@ builder.Services.AddScoped<IAmizadeRepository, AmizadeRepository>();
 // ❌ ERRO SEU (faltava implementação)
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<IComentarioRepository, ComentarioRepository>();
+builder.Services.AddScoped<ICurtidaRepository, CurtidaRepository>();
 
 // ===================== SERVICES =====================
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<AmizadePendenteService>();
 builder.Services.AddScoped<AmizadeService>();
 builder.Services.AddScoped<PostService>();
+builder.Services.AddScoped<CurtidaService>();
 
 // ===================== AUTOMAPPER =====================
 builder.Services.AddAutoMapper(typeof(UsuarioProfile).Assembly);
@@ -111,8 +114,7 @@ app.UseHttpsRedirection();
 
 app.UseCors("AllowAll");
 
-// Middleware global de erro
-app.UseMiddleware<Middleware>();
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();

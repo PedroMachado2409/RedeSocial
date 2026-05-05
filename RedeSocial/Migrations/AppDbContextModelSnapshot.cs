@@ -107,6 +107,29 @@ namespace RedeSocial.Migrations
                     b.ToTable("Comentarios");
                 });
 
+            modelBuilder.Entity("RedeSocial.Domain.Entities.Curtida", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Curtidas");
+                });
+
             modelBuilder.Entity("RedeSocial.Domain.Entities.Post", b =>
                 {
                     b.Property<int>("Id")
@@ -114,6 +137,12 @@ namespace RedeSocial.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Curtidas")
+                        .HasColumnType("integer");
+
+                    b.Property<byte[]>("ImagemPost")
+                        .HasColumnType("bytea");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
@@ -140,9 +169,18 @@ namespace RedeSocial.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("DescricaoPerfil")
+                        .HasColumnType("text");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<byte[]>("FotoBanner")
+                        .HasColumnType("bytea");
+
+                    b.Property<byte[]>("FotoPerfil")
+                        .HasColumnType("bytea");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -199,6 +237,25 @@ namespace RedeSocial.Migrations
                 {
                     b.HasOne("RedeSocial.Domain.Entities.Post", "Post")
                         .WithMany("Comentarios")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RedeSocial.Domain.Entities.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("RedeSocial.Domain.Entities.Curtida", b =>
+                {
+                    b.HasOne("RedeSocial.Domain.Entities.Post", "Post")
+                        .WithMany()
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

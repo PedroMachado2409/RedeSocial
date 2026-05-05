@@ -1,0 +1,112 @@
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.hero h2 { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+.hero p   { color: #65676b; font-size: 15px; }
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+  margin-bottom: 24px;
+  color: #65676b;
+  font-size: 16px;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: inherit;
+  background: transparent;
+  color: #050505;
+}
+
+.btnSearch {
+  background: #1877f2;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.btnSearch:hover:not(:disabled) { background: #166fe5; }
+.btnSearch:disabled { opacity: .6; cursor: default; }
+
+.results { display: flex; flex-direction: column; gap: 10px; }
+
+.noResults {
+  text-align: center;
+  padding: 40px 16px;
+  color: #65676b;
+}
+.noResults i  { font-size: 40px; margin-bottom: 12px; display: block; }
+.noResults p  { font-size: 15px; }
+
+.resultCard {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: box-shadow .15s;
+}
+.resultCard:hover { box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+
+.resultInfo { flex: 1; }
+.resultInfo strong { display: block; font-size: 16px; }
+.resultInfo small  { color: #65676b; font-size: 13px; }
+
+.btnAdd {
+  background: #e7f3ff;
+  color: #1877f2;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background .15s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.btnAdd:hover:not(:disabled) { background: #cce0ff; }
+.btnAdd:disabled { opacity: .6; cursor: default; }
+
+.btnSent {
+  background: #e4e6ea;
+  color: #65676b;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  white-space: nowrap;
+}

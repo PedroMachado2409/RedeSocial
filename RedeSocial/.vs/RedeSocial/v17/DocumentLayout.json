@@ -3,13 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocial\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7045F4B2-FFDC-40D0-AB6B-E8A0BA44647F}|..\\RedeSocialTests\\RedeSocialTests.csproj|c:\\users\\celso\\source\\repos\\social\\redesocialtests\\aplicacao\\service\\authservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\social\\redesocial\\aplicacao\\service\\curtidaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:aplicacao\\service\\curtidaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7045F4B2-FFDC-40D0-AB6B-E8A0BA44647F}|..\\RedeSocialTests\\RedeSocialTests.csproj|c:\\users\\celso\\source\\repos\\social\\redesocialtests\\aplicacao\\service\\postservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\social\\redesocial\\exceptions\\badrequestexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:exceptions\\badrequestexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7045F4B2-FFDC-40D0-AB6B-E8A0BA44647F}|..\\RedeSocialTests\\RedeSocialTests.csproj|c:\\users\\celso\\source\\repos\\social\\redesocialtests\\aplicacao\\service\\amizadeservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|c:\\users\\celso\\source\\repos\\social\\redesocial\\api\\controller\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4D1B137-67C7-4E09-B5F2-CB06B8A4B833}|RedeSocial.csproj|solutionrelative:api\\controller\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,45 +27,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PostServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\PostServiceTests.cs",
-              "RelativeDocumentMoniker": "..\\RedeSocialTests\\Aplicacao\\Service\\PostServiceTests.cs",
-              "ToolTip": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\PostServiceTests.cs",
-              "RelativeToolTip": "..\\RedeSocialTests\\Aplicacao\\Service\\PostServiceTests.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAYwBoAAAA0AAAAAAAAAA==",
+              "Title": "BadRequestException.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocial\\Exceptions\\BadRequestException.cs",
+              "RelativeDocumentMoniker": "Exceptions\\BadRequestException.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocial\\Exceptions\\BadRequestException.cs",
+              "RelativeToolTip": "Exceptions\\BadRequestException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T00:54:03.465Z",
+              "WhenOpened": "2026-05-03T19:36:40.625Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AuthServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\AuthServiceTests.cs",
-              "RelativeDocumentMoniker": "..\\RedeSocialTests\\Aplicacao\\Service\\AuthServiceTests.cs",
-              "ToolTip": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\AuthServiceTests.cs",
-              "RelativeToolTip": "..\\RedeSocialTests\\Aplicacao\\Service\\AuthServiceTests.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAIA2wCAAAAAuAAAAAAAAAA==",
+              "Title": "CurtidaService.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocial\\Aplicacao\\Service\\CurtidaService.cs",
+              "RelativeDocumentMoniker": "Aplicacao\\Service\\CurtidaService.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocial\\Aplicacao\\Service\\CurtidaService.cs",
+              "RelativeToolTip": "Aplicacao\\Service\\CurtidaService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAADIAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T00:54:02.728Z",
+              "WhenOpened": "2026-05-03T19:34:29.609Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AmizadeServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\AmizadeServiceTests.cs",
-              "RelativeDocumentMoniker": "..\\RedeSocialTests\\Aplicacao\\Service\\AmizadeServiceTests.cs",
-              "ToolTip": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocialTests\\Aplicacao\\Service\\AmizadeServiceTests.cs",
-              "RelativeToolTip": "..\\RedeSocialTests\\Aplicacao\\Service\\AmizadeServiceTests.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAA0AAAAAAAAAA==",
+              "Title": "PostController.cs",
+              "DocumentMoniker": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocial\\Api\\Controller\\PostController.cs",
+              "RelativeDocumentMoniker": "Api\\Controller\\PostController.cs",
+              "ToolTip": "C:\\Users\\celso\\source\\repos\\Social\\RedeSocial\\Api\\Controller\\PostController.cs",
+              "RelativeToolTip": "Api\\Controller\\PostController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T00:53:37.076Z",
+              "WhenOpened": "2026-05-03T16:37:16.659Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             }
           ]
         }

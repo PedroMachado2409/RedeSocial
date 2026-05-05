@@ -9,19 +9,15 @@ namespace RedeSocial.Infraestrutura.Repositorios
     {
         private readonly AppDbContext _context;
 
-        public PostRepository(AppDbContext context)
-        {
-            _context = context;
-        }
+        public PostRepository(AppDbContext context) => _context = context;
 
-        public async Task<List<Post>> ListarPosts()
-        {
-            return await _context.Posts.
-                Include(p => p.Comentarios)
-                 .ThenInclude(c => c.Usuario)
-                .Include(p => p.Usuario)    
-                .OrderBy(p => p.Id).ToListAsync();
-        }
+        public async Task<List<Post>> ListarPosts(int usuarioId)
+            => await _context.Posts
+                .Include(p => p.Comentarios).ThenInclude(c => c.Usuario)
+                .Include(p => p.Usuario)
+                .Where(p => p.UsuarioId == usuarioId)
+                .OrderByDescending(p => p.Id)
+                .ToListAsync();
 
         public async Task<Post> CadastrarPost(Post post)
         {
@@ -31,23 +27,34 @@ namespace RedeSocial.Infraestrutura.Repositorios
         }
 
         public async Task<Post?> ObterPostPorId(int id)
-        {
-           var post = await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
-            return post;
-        }
+            => await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
 
         public async Task<List<Post>> ListarPostsDosAmigos(List<int> amigosIds)
-        {
-            return await _context.Posts
-                .Include(p => p.Comentarios)
-                    .ThenInclude(c => c.Usuario)
+            => await _context.Posts
+                .Include(p => p.Comentarios).ThenInclude(c => c.Usuario)
                 .Include(p => p.Usuario)
                 .Where(p => amigosIds.Contains(p.UsuarioId))
-                .OrderBy(p => p.Id)
+                .OrderByDescending(p => p.Id)
+                .ToListAsync();
+
+        public async Task<List<Post>> ListarPostsDoUsuario(int usuarioId)
+            => await _context.Posts
+                .Include(p => p.Comentarios).ThenInclude(c => c.Usuario)
+                .Include(p => p.Usuario)
+                .Where(p => p.UsuarioId == usuarioId)
+                .OrderByDescending(p => p.Id)
+                .ToListAsync();
+
+        public async Task<List<Post>> ListarTodosOsPosts(int usuarioId, List<int> amigosIds)
+        {
+            // Mescla posts do próprio usuário + posts dos amigos, sem duplicatas
+            var ids = amigosIds.Union(new[] { usuarioId }).ToList();
+            return await _context.Posts
+                .Include(p => p.Comentarios).ThenInclude(c => c.Usuario)
+                .Include(p => p.Usuario)
+                .Where(p => ids.Contains(p.UsuarioId))
+                .OrderByDescending(p => p.Id)
                 .ToListAsync();
         }
-
-      
-
     }
 }

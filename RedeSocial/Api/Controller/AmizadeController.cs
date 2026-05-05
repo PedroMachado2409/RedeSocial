@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RedeSocial.Aplicacao.Dto;
 using RedeSocial.Aplicacao.Service;
 
@@ -7,6 +8,7 @@ namespace RedeSocial.Api.Controller
 
     [ApiController]
     [Route("/api/[controller]")]
+    [Authorize]
     public class AmizadeController : ControllerBase
     {
         private readonly AmizadeService _service;
@@ -31,7 +33,7 @@ namespace RedeSocial.Api.Controller
         }
 
         [HttpPost("aceitar")]
-        public async Task<ActionResult<AmizadeDTO>> AceitarAmizade([FromBody] AmizadeDTO dto)
+        public async Task<ActionResult<AmizadeDTO>> AceitarAmizade([FromBody] AceitarAmizadeRequestDTO dto)
         {
             var amizade = await _service.AceitarAmizade(dto);
             return Ok(amizade);

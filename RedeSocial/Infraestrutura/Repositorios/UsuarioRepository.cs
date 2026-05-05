@@ -9,10 +9,7 @@ namespace RedeSocial.Infraestrutura.Repositorios
     {
         private readonly AppDbContext _context;
 
-        public UsuarioRepository(AppDbContext context)
-        {
-            _context = context;
-        }
+        public UsuarioRepository(AppDbContext context) => _context = context;
 
         public async Task<Usuario> CadastrarUsuario(Usuario usuario)
         {
@@ -22,23 +19,30 @@ namespace RedeSocial.Infraestrutura.Repositorios
         }
 
         public async Task<List<Usuario>> ListarTodosOsUsuarios()
-        {
-            return await _context.Usuarios.OrderBy(u => u.Id).ToListAsync();
-        }
+            => await _context.Usuarios.OrderBy(u => u.Id).ToListAsync();
 
         public async Task<Usuario?> ObterUsuarioPorId(int id)
-        {
-            return await _context.Usuarios.FindAsync(id);
-        }
+            => await _context.Usuarios.FindAsync(id);
 
         public async Task<Usuario?> ObterUsuarioPorEmail(string email)
-        {
-            return await _context.Usuarios.SingleOrDefaultAsync(u => u.Email == email);
-        }
+            => await _context.Usuarios.SingleOrDefaultAsync(u => u.Email == email);
 
         public async Task<List<Usuario>> ObterUsuarioPorNome(string nome)
+            => await _context.Usuarios
+                .Where(u => u.Nome.ToLower().Contains(nome.ToLower()))
+                .ToListAsync();
+
+        public async Task<Usuario> AtualizarPerfil(Usuario usuario)
         {
-            return await _context.Usuarios.Where(u => u.Nome.ToLower().Contains(nome)).ToListAsync();
+            _context.Usuarios.Update(usuario);
+            await _context.SaveChangesAsync();
+            return usuario;
+        }
+
+        public async Task TrocarSenha(Usuario usuario)
+        {
+            _context.Usuarios.Update(usuario);
+            await _context.SaveChangesAsync();
         }
     }
 }
